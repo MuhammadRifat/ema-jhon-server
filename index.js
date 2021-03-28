@@ -33,6 +33,10 @@ client.connect(err => {
         })
     })
 
+    app.get('/', (req, res) => {
+        res.send("It's Working");
+    })
+
     app.get('/product/:key', (req, res) => {
         productCollection.find({key: req.params.key})
         .toArray( (err, documents) => {
